@@ -37,8 +37,8 @@ def stream_tag_questions_to_file(tag, questions_data_file):
 
     if questions_response.ok:
       for question in questions_response.json()['items']:
-        question_data_file.write(item_delimiter + json.dumps(question))
-        item_delimiter = ','
+        question_data_file.write(item_delimiter + json.dumps(question, indent=4, sort_keys=True))
+        item_delimiter = ',\n'
 
       handle_potential_backoff_response(questions_response.json())
 
