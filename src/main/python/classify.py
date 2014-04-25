@@ -104,7 +104,7 @@ class KnnClassifier:
                   labelCounts[tag]['doc_count'] = labelCounts[tag]['doc_count'] + 1
                   labelCounts[tag]['total_lucene_score'] = labelCounts[tag]['total_lucene_score'] + result['score']
                   if self.explain:
-                      explanation = self._get_explanation(explain[result['key']])
+                      explanation = self._get_explanation(explain[str(result['question_id'])])
                       self._add_to_aggregated_explanations(tag, explanation, total_explanation)
                       result['explanation'] = self._normalize_to_percentages(explanation)
 
