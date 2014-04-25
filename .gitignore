@@ -37,3 +37,6 @@ nosetests.xml
 
 # Solr
 Data
+
+# Bower
+bower_components

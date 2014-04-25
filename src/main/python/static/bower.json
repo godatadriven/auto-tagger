@@ -1,0 +1,24 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "homepage": "https://github.com/godatadriven/auto-tagger",
+  "authors": [
+    "Jonatan Samoocha <jsamoocha@xebia.com>"
+  ],
+  "description": "text classifier frontend",
+  "license": "AP",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "3.1.1",
+    "angular": "1.2.16",
+    "angular-strap": "2.0.1",
+    "angular-sanitize": "1.2.16"
+  }
+}
