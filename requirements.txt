@@ -4,3 +4,5 @@ lxml==3.2.4
 readability-lxml==0.3.0.2
 requests==2.2.1
 wsgiref==0.1.2
+numpy==1.8.1
+scipy==0.13.3
