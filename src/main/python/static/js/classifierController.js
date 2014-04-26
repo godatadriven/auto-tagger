@@ -14,6 +14,7 @@ classifierApp.directive('dynamic', function($compile) {
 });
 
 classifierApp.controller('ClassifierCtrl', function ClassifierCtrl($scope, $http, $location) {
+	$scope.wordCount = 0;
 
 	$scope.predict = function() {
 		$http.get('/classify/'+ $scope.predict.query).error(function(error) {
@@ -28,6 +29,16 @@ classifierApp.controller('ClassifierCtrl', function ClassifierCtrl($scope, $http
 			$scope.zoomed_doc = null
 			$scope.predict.highlighted_query = null
 		});
+	}
+
+	$scope.predictOnNewOrRemovedWord = function($event) {
+		console.log($event.keyCode);
+		currentWordCount = $scope.predict.query.split(" ").length;
+
+		if (currentWordCount < $scope.wordCount || $event.keyCode === 32) {
+			$scope.predict();
+			$scope.wordCount = currentWordCount;
+		}
 	}
 
 	$scope.show_predictions = function() {
@@ -79,6 +90,10 @@ classifierApp.controller('ClassifierCtrl', function ClassifierCtrl($scope, $http
 			query_text = query_text.replace(r, '<span style="'+textcolor+'background-color:rgba(45,108,162,'+val+');border-radius:4px;padding:2px">$1</span>')
 		}
 		return query_text
+	}
+
+	endsWithSpace = function(str) {
+		return str.substr(str.length - 1, str.length) === " ";
 	}
 
 });
