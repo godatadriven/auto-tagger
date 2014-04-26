@@ -32,7 +32,7 @@ class KnnClassifier:
       mean_total_score = np.mean([foundLabels[label]['total_lucene_score'] for label in foundLabels])
       std_total_score = np.std([foundLabels[label]['total_lucene_score'] for label in foundLabels])
 
-      for label in labelCounts:
+      for label in foundLabels:
           labelCounts[label]['norm_score'] = round(norm.cdf(labelCounts[label]['total_lucene_score'], loc=mean_total_score, scale=std_total_score), 2)
 
   def _get_explanation_description(self, explanation, explanation_descriptions):
@@ -81,7 +81,7 @@ class KnnClassifier:
 
 
   def classify(self, text):
-      labelCounts = {label: {'doc_count':0, 'total_lucene_score':0} for label in self.labels}
+      labelCounts = {label: {'doc_count':0, 'total_lucene_score':0, 'norm_score':0} for label in self.labels}
       utf8text = unicode(text.encode('utf-8'), errors='ignore')
       firstpartutf8text = ' '.join(utf8text.split()[:1000])
       moreArgs = {
