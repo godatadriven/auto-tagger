@@ -4,63 +4,6 @@ html {
 	margin: 2em;
 }
 
-em {
-	color: red;
-	font-weight: bold;
-}
-
-dt {
-	margin-top: 1.3em;
-}
-
-
-
-.detail_button {
-	margin-left: 1em;
-}
-
-.detail_label {
-	margin-right: 1em;
-	font-weight: bold;
-}
-
-.hidden {
-	display:none;
-}
-
-.show_normal {
-	color:orange;
-}
-
-.show_urgent {
-	color:red;
-}
-
-.btn-classify {
-	margin-left: 1em;
-}
-
-.btn-explain-category {
-	margin-left: 1em;
-}
-
-.explain-category {
-	margin-bottom: 0.5em;
-}
-
-#inputDatePicker {
-	border-radius: 4px;
-}
-
-#doc_details {
-	display: none;
-	position: fixed;
-	top: 10%;
-	left: 40%;
-	right: 8%;
-	font-size: 0.8em;
-}
-
-#doc-container {
-	font-size: 0.8em;
+#explain-container {
+	margin-top: 1em;
 }
