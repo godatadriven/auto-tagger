@@ -45,3 +45,6 @@ bower_components
 .idea/
 *.iml
 *.iws
+
+# project
+question_data.json
