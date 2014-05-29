@@ -40,3 +40,8 @@ Data
 
 # Bower
 bower_components
+
+# Intellij
+.idea/
+*.iml
+*.iws
