@@ -24,12 +24,36 @@ The project depends on several Python and front-end packages, as well as a local
 
 ## Getting Stackoverflow questions into Solr
 
-The project contains a script for downloading questions from the Stackoverflow api. Running `python get-so-data.py` from `src/main/python` will download the questions into a file `question_data.json`. Currently, the download will consist of 250k questions and may take up to 1 hr. To modify the download size, you can change the value of `questions_per_tag` in the script.
+The project contains a script for downloading questions from the Stackoverflow api. Running 
 
-Once the download is finished, it's time to start Solr. Solr requires a directory for reading its configuration and writing its data. In this case, it should be the absolute path pointing to the `src/main/solr-config` directory inside of this project. As such, starting Solr should look as `solr [absolute_path_to_auto_tagger_project]/src/main/solr-config`. Confirm that Solr is running by checking http://localhost:8983/solr/.
+```
+python get-so-data.py
+```
 
-Finally, the questions should be loaded into Solr by running `python load_questions.py question_data.json`. For 250k questions, this should run without (excessive) swapping on a fairly modern system with 8Gb RAM available. Confirm that the questions are loaded by going to the solr admin page, selecting the collection "stackoverflow-collection", and checking the number of documents in the "statistics" pane. The number of documents will actually be smaller than 250k because of duplicate questions with overlapping tags.
+from `src/main/python` will download the questions into a file `question_data.json`. Currently, the download will consist of 250k questions and may take up to 1 hr. To modify the download size, you can change the value of `questions_per_tag` in the script.
+
+Once the download is finished, it's time to start Solr. Solr requires a directory for reading its configuration and writing its data. In this case, it should be the absolute path pointing to the `src/main/solr-config` directory inside of this project. As such, starting Solr should look as 
+
+```
+solr [absolute_path_to_auto_tagger_project]/src/main/solr-config
+```
+
+Confirm that Solr is running by checking http://localhost:8983/solr/.
+
+Finally, the questions should be loaded into Solr by running 
+
+```
+python load_questions.py question_data.json
+```
+
+For 250k questions, this should run without (excessive) swapping on a fairly modern system with 8Gb RAM available. Confirm that the questions are loaded by going to the solr admin page, selecting the collection "stackoverflow-collection", and checking the number of documents in the "statistics" pane. The number of documents will actually be smaller than 250k because of duplicate questions with overlapping tags.
 
 ## Running the classifier
 
-The classifier can be started with `python classifier_app.py`. Open a browser pointing to http://localhost:5000/static/predict.html and start typing some hypothetical questions...
+The classifier can be started with 
+
+```
+python classifier_app.py
+```
+
+Open a browser pointing to http://localhost:5000/static/predict.html and start typing some hypothetical questions...
