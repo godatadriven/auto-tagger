@@ -20,7 +20,7 @@
         <div class="form-group">
           <label for="textInputField" class="col-lg-1 control-label">Text</label>
           <div class="col-lg-11">
-            <textarea id="textInputField" rows="4" class="form-control" placeholder="Enter text..." 
+            <textarea id="textInputField" rows="4" class="form-control" placeholder="Enter text..."
               ng-model="predict.query" ng-keyup="predictOnNewOrRemovedWord($event)"></textarea>
           </div>
         </div>
@@ -28,11 +28,12 @@
           <label for="tag-container" class="col-lg-1 control-label">Tags</label>
           <div class="col-lg-11" id="tag-container">
             <span ng-repeat="(label, prediction) in predictions">
-              <button ng-repeat="(label, values) in prediction" class="btn btn-info btn-xs col-lg-2" ng-click="explain_category(label)" bs-button>{{label}}</button>
+              <button ng-repeat="(label, values) in prediction" class="btn btn-info btn-xs col-lg-2"
+                      ng-click="explain_category(label)" bs-button>{{label}}</button>
             </span>
-            <div id="explain-container" dynamic="predict.highlighted_query"></p>
           </div>
-          
+          <div id="explain-container" dynamic="predict.highlighted_query"></div>
+        </div>
       </form>
     </div>
   </div>
