@@ -117,7 +117,7 @@ class KnnClassifier:
 
       for label in total_explanation:
         # print label
-        # print 
+        # print
         # print
         # print total_explanation[label]
         # print
@@ -128,4 +128,3 @@ class KnnClassifier:
 
       return {'label_predictions':labels_sorted_by_confidence, 'docs':results.docs, 'agg_explanation':total_explanation}
 
-  

@@ -69,7 +69,7 @@ questions_api_url = 'http://api.stackexchange.com/2.2/questions'
 
 with open('question_data.json', 'w') as question_data_file:
   question_data_file.write('{"questions":[')
-  
+
   for tag in tags:
     stream_tag_questions_to_file(tag, question_data_file)
 
