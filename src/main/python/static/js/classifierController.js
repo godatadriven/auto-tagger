@@ -44,7 +44,7 @@ classifierApp.controller('ClassifierCtrl', function ClassifierCtrl($scope, $http
 	$scope.show_predictions = function() {
 		return $scope.predictions != null && Object.keys($scope.predictions).length > 0
 	}
-	
+
 	$scope.explain_category = function(label) {
 		$scope.predict.highlighted_query = explain_highlight($scope.aggregated_explanations[label])
 	}

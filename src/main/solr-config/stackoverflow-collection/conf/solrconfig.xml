@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <config>
-  <luceneMatchVersion>LUCENE_36</luceneMatchVersion> 
+  <luceneMatchVersion>LUCENE_36</luceneMatchVersion>
   <requestHandler name="/select" class="solr.StandardRequestHandler" default="true" />
   <requestHandler name="/update" class="solr.XmlUpdateRequestHandler" />
   <requestHandler name="/update/javabin" class="solr.BinaryUpdateRequestHandler" />
@@ -29,7 +29,7 @@
       <bool name="terms">true</bool>
       <bool name="distrib">false</bool>
       <int name="terms.limit">-1</int>
-    </lst>     
+    </lst>
     <arr name="components">
       <str>terms</str>
     </arr>
