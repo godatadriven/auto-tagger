@@ -35,6 +35,10 @@ from `src/main/python` will download the questions into a file `question_data.js
 Once the download is finished, it's time to start Solr. Solr requires a directory for reading its configuration and writing its data. In this case, it should be the absolute path pointing to the `src/main/solr-config` directory inside of this project. As such, starting Solr should look as 
 
 ```
+solr start -s [absolute_path_to_auto_tagger_project]/src/main/solr-config
+```
+or, for solr versions < 4.9,
+```
 solr [absolute_path_to_auto_tagger_project]/src/main/solr-config
 ```
 
